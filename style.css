@@ -1,6 +1,5 @@
  /* ---------- reset css ----------*/
 
-
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -45,7 +44,6 @@ table {
 	border-spacing: 0;
 }
 
-
 /* ---------- variant color ----------*/
 
 :root {
@@ -57,12 +55,18 @@ table {
     --yellow-color:#F2DA02;
   }
 
-
 /* ---------- global ----------*/
 
+@font-face {
+    font-family: "Noto-Sans";
+    src: url("assets/noto-sans-v25-latin-regular.woff2") format("woff2"),
+         url("assets/noto-sans-v25-latin-regular.woff") format("woff");  
+    font-weight: normal;
+    font-style: normal;
+}
 
 body {
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Noto-Sans', sans-serif;
 }
 
 h2 {
@@ -160,8 +164,8 @@ section {
     transform-origin: left top;
 }
 
-
 /* ---------- header ----------*/
+
 .navbar {
     position: fixed;
     display: flex;
@@ -179,15 +183,15 @@ section {
     display: block;
 }
 
-    .nav-burger.active .bar:nth-child(2){
-      opacity: 0;
-    }
-    .nav-burger.active .bar:nth-child(1){
-      transform: translateY(14px) rotate(45deg);
-    }
-    .nav-burger.active .bar:nth-child(3){
-      transform: translateY(-14px) rotate(-45deg);
-    }
+.nav-burger.active .bar:nth-child(2) {
+    opacity: 0;
+}
+.nav-burger.active .bar:nth-child(1) {
+    transform: translateY(14px) rotate(45deg);
+}
+.nav-burger.active .bar:nth-child(3) {
+    transform: translateY(-14px) rotate(-45deg);
+}
 
 .bar {
     display: block;
@@ -206,7 +210,7 @@ section {
 
 }
 
-.nav-list{
+.nav-list {
     position: fixed;
     left: -100%;
     top: 20vh;
@@ -219,13 +223,11 @@ section {
     transition: 0.3s; 
     font-size: 25px;
 
-  }
+}
   
-  .nav-list.active{
+.nav-list.active {
     left: 0;
-  }
-
-
+}
 
 .nav-btn {
     display: flex;
@@ -249,32 +251,6 @@ section {
     margin: 16px 0;
 }
 
-/* ---------- nav media ----------*/
-
-@media(min-width:1280px){
-    .nav-burger{
-      display: none;
-    }
-  
-  .nav-list{
-    flex-direction: row;
-    gap: 20px;
-    left: 0px;
-    top: 0;
-    position: relative;
-    width: auto;
-}
-
-}
-
-@media (min-width:768px) {
-    .nav-logo img {
-    width: 200px;
-    height: 200px;
-}
-
-}
-
 /* ---------- main ----------*/
 
 main {
@@ -283,7 +259,7 @@ main {
 
 /* ---------- section-discover ----------*/
 
-.section-discover{
+.section-discover {
     background-color: var(--secondary-bg-color);
     display: flex;
     flex-direction: row;
@@ -303,7 +279,6 @@ main {
     font-size: 64px;
 }
 
-
 .section-discover img {
     object-fit: cover;
     max-width: 100%;
@@ -311,10 +286,9 @@ main {
 
 /* ---------- section-recipe ----------*/
 
-.section-recipe{
+.section-recipe {
     background-color: var(--main-bg-color);
 }
-
 
 .carousel-card-1 {
     display: flex;
@@ -322,7 +296,6 @@ main {
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: center;
-
 }
 
 .item {
@@ -370,15 +343,15 @@ font-weight: bold;
 background: linear-gradient(var(--white-color)60%,var(--red-color)40%);
 }
 
-.span-card-info{
+.span-card-info {
     text-decoration: underline;
     font-size: 10px;
     color: var(--black-color);
     padding-bottom: 10px;
 }
 
-
 /* ---------- section-about ----------*/
+
 .section-about {
     display: flex;
     flex-direction: column;
@@ -400,6 +373,7 @@ background: linear-gradient(var(--white-color)60%,var(--red-color)40%);
 .about-img-container {
     box-sizing: border-box;
 }
+
 .about-img-container img {
     object-fit: cover;
     max-width: 100%;
@@ -415,27 +389,43 @@ background: linear-gradient(var(--white-color)60%,var(--red-color)40%);
     padding-top: 30px;
 }
 
+.section-how p {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.etape {
+    padding-bottom: 80px;
+}
+
 .etape ul {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    gap: 35px;
     align-items: center;
 }
 
 .etape li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.etape img {
+    padding-bottom: 30px;
+}
+
+.etape-choix {
     padding-top: 30px;
     padding-bottom: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
 }
 
 .etape-choix ul {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 50px;
     align-items: center;
     padding-top: 30px;
     padding-bottom: 30px;
@@ -459,8 +449,6 @@ background: linear-gradient(var(--white-color)60%,var(--red-color)40%);
 
 .section-review {
     background-color: var(--main-bg-color);
-  
-
 }
 
 .card-line {
@@ -472,7 +460,7 @@ background: linear-gradient(var(--white-color)60%,var(--red-color)40%);
     align-items: center;
 }
 
-.review-card-container{
+.review-card-container {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -487,9 +475,14 @@ background: linear-gradient(var(--white-color)60%,var(--red-color)40%);
     gap: 20px;
 }
 
+.nom-profile {
+    font-weight: bold;
+    font-size: 18px;
+}
+
 /* ---------- footer ----------*/
 
-footer{
+footer {
     background-color: var(--black-color);
     color: var(--white-color);
     display: flex;
@@ -516,11 +509,9 @@ footer{
     padding-bottom: 20px;
 }
 
-
 .footer-container li {
     padding-bottom: 20px;
 }
-
 
 .footer-sns-logo {
     display: flex;
@@ -541,6 +532,7 @@ footer{
     background-color: var(--white-color);
     height: 1px;
 }
+
 .footer-copyright {
     display: flex;
     flex-direction: row;
@@ -549,58 +541,57 @@ footer{
     padding-right: 40px;
 }
 
-
 /* ---------- media ----------*/
-
-@media(min-width:1280px){
-    .nav-burger{
-      display: none;
-    }
-  
-  .nav-list{
-    flex-direction: row;
-    gap: 20px;
-    left: 0px;
-    top: 0;
-    position: relative;
-    width: auto;
-}
-
-.section-about {
-    flex-direction: row;
-}
-
-.about-img-container img {
-    object-fit: cover;
-    max-width: 50vw;
-}
-
-.etape ul {
-    flex-direction: row;
-}
-
-.small-arrow-right {
-    transform: rotate(-45deg);
-}
-
-.etape li {
-    gap: 5px;
-    padding-left: 10px;
-}
-
-}
 
 @media (min-width:768px) {
     .nav-logo img {
     width: 200px;
     height: 200px;
-}
-.bar-vertical {
+    }
+
+    .bar-vertical {
     background-color: var(--white-color);
     height: 170px;
     width: 1px;
     align-self: center;
-}
+    }
    
+}
+
+@media(min-width:1280px){
+    .nav-burger{
+        display: none;
+    }
+  
+    .nav-list{
+        flex-direction: row;
+        gap: 20px;
+        left: 0px;
+        top: 0;
+        position: relative;
+        width: auto;
+    }
+
+    .section-about {
+        flex-direction: row;
+    }
+
+    .about-img-container img {
+        object-fit: cover;
+        max-width: 50vw;
+    }
+
+    .etape ul {
+        flex-direction: row;
+    }
+
+    .small-arrow-right {
+        transform: rotate(-45deg);
+    }
+
+    .etape li {
+        gap: 5px;
+        padding-left: 10px;
+    }
 
 }
