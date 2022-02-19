@@ -63,6 +63,7 @@ table {
          url("assets/noto-sans-v25-latin-regular.woff") format("woff");  
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 
 body {
@@ -80,7 +81,7 @@ h3 {
     color: var(--yellow-color);
 }
 
-h4 {
+.nom-plat {
     font-weight: bold;
     font-size: 24px;
 }
